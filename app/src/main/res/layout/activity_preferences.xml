@@ -9,109 +9,87 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.moore.updatetimesheet.Preferences">
 
-    <TextView
-        android:id="@+id/emailto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/emailtoInput"
-        android:layout_alignEnd="@+id/save_button"
-        android:layout_alignRight="@+id/save_button"
-        android:text="Email To:"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="99dp"
-        android:text="username"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/username"
-        android:layout_marginTop="43dp"
-        android:text="password"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <EditText
-        android:id="@+id/emailtoInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/usernameInput"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/usernameInput"
-        android:ems="10"
-        android:inputType="textEmailAddress" />
-
-    <EditText
-        android:id="@+id/usernameInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/username"
-        android:layout_marginLeft="25dp"
-        android:layout_marginStart="25dp"
-        android:layout_toEndOf="@+id/username"
-        android:layout_toRightOf="@+id/username"
-        android:width="200dp" />
-
-    <EditText
-        android:id="@+id/passwordInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/password"
-        android:layout_alignLeft="@+id/usernameInput"
-        android:layout_alignStart="@+id/usernameInput"
-        android:width="200dp" />
-
-    <Button
-        android:id="@+id/save_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/password"
-        android:layout_marginTop="98dp"
-        android:nestedScrollingEnabled="true"
-        android:onClick="saveOnClick"
-        android:text="Save" />
-
     <Button
         android:id="@+id/display_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/save_button"
+        android:layout_alignEnd="@+id/save_button"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/save_button"
         android:width="150dp"
         android:onClick="dispOnClick"
         android:text="Display Info" />
 
     <TextView
+        android:id="@+id/emailto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/display_button"
+        android:layout_marginTop="131dp"
+        android:text="Email To:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/emailtoInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/emailto"
+        android:layout_toEndOf="@+id/return_btn"
+        android:layout_toRightOf="@+id/return_btn"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <TextView
         android:id="@+id/dispInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/passwordInput"
-        android:layout_alignStart="@+id/passwordInput"
-        android:layout_centerVertical="true"
-        android:text="Large Text"
+        android:layout_above="@+id/save_button"
+        android:layout_centerHorizontal="true"
+        android:text="Display"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/return_btn"
+        android:nestedScrollingEnabled="true"
+        android:onClick="saveOnClick"
+        android:text="Save" />
 
     <Button
         android:id="@+id/return_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:onClick="returnToMain"
         android:singleLine="false"
         android:text="Return" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:text="Docket:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/docketInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/emailtoInput"
+        android:layout_alignStart="@+id/emailtoInput"
+        android:ems="10"
+        android:inputType="number" />
 
 </RelativeLayout>

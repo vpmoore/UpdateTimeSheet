@@ -3,10 +3,13 @@
 
     <string name="text_title">Select Your Time</string>
     <string name="action_settings">Settings</string>
-    <string name="opt_1">Sign On 8:30am</string>
+    <string name="opt_1">Option 1 test</string>
     <string name="opt_2">Sign Off 5:00pm</string>
     <string name="opt_3">Sign Off 5:00pm Passing Office </string>
     <string name="title_activity_set_recipient">Edit Recipient</string>
     <string name="title_activity_set_preferences">Preferences</string>
+
+    <string name="menu_title_1">Preferences</string>
+    <string name="menu_title_2">Edit</string>
 
 </resources>

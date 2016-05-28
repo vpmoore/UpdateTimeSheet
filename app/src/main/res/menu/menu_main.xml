@@ -7,12 +7,12 @@
     <item
         android:id="@+id/menu_item_1"
         android:orderInCategory="1"
-        android:title="Preferences"
+        android:title="@string/menu_title_1"
         app:showAsAction="never" />
     <item
         android:id="@+id/menu_item_2"
         android:orderInCategory="2"
-        android:title="not set"
+        android:title="@string/menu_title_2"
         app:showAsAction="never" />
     </group>
 
