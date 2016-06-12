@@ -1,6 +1,8 @@
 package com.example.moore.updatetimesheet;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -11,18 +13,33 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private static RadioGroup radio_g;
     private static RadioButton radio_choice;
 
+    EditText emailtoInput;
+    TextView dispinfo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+//        SharedPreferences sharedPref = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+//        String emailto = sharedPref.getString("emailto","");
+//        emailtoInput.setText(emailto);
+//
+//        dispinfo.setText(emailto);
+//
+
+
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -44,7 +61,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-//---------------------------add info send email-------------------------------
+
+    //---------------------------add info send email-------------------------------
     private void sendEmail(String optInfo) {
 
         //working sendEmail function
@@ -68,15 +86,8 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "There is no email client installed.", Toast.LENGTH_SHORT).show();
         }
     }
-//--------------------------------tests-----------------------------------
 
-//**//*//**//**//**//** Called when the user clicks the Send button *//**//**//**//**//**//**//**//*
-    public void setRecipient(View view) {
-        // Do something in response to button
-        Intent intent = new Intent(this, SetRecipient.class);
-    }
 
-//----------------------option menus----------------------------------------------------------------
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -86,20 +97,26 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
         switch (id) {
             case R.id.menu_item_1:
-                Toast.makeText(getApplicationContext(), "Option 1 selected", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.menu_item_2:
-                Toast.makeText(getApplicationContext(), "Option 1 selected", Toast.LENGTH_SHORT).show();
+                if (item.isChecked())
+                    item.setChecked(false);
+                else
+                    item.setChecked(true);
+                Intent i = new Intent(this, Preferences.class);
+                startActivity(i);
+                //.makeText(getApplicationContext(), "Option 1 selected", Toast.LENGTH_SHORT).show();
+                return true;
 
-                break;
+            case R.id.menu_item_2:
+                if (item.isChecked())
+                    item.setChecked(false);
+                else
+                    item.setChecked(true);
+
+                //Toast.makeText(this, View), "Option 1 selected", Toast.LENGTH_SHORT).show();
+                return true;
 
         }
 

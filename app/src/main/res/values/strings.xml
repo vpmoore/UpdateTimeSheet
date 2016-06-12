@@ -7,4 +7,6 @@
     <string name="opt_2">Sign Off 5:00pm</string>
     <string name="opt_3">Sign Off 5:00pm Passing Office </string>
     <string name="title_activity_set_recipient">Edit Recipient</string>
+    <string name="title_activity_set_preferences">Preferences</string>
+
 </resources>
